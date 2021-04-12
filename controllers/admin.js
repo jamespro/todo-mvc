@@ -14,7 +14,7 @@ module.exports = {
         try{
             await Todo.create({todo: req.body.todoItem, completed: false})
             console.log('Todo has been added!')
-            res.redirect('/todos')
+            res.redirect('/admin')
         }catch(err){
             console.log(err)
         }
