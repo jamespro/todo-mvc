@@ -1,15 +1,15 @@
 const express = require('express')
 const router = express.Router()
-const todosController = require('../controllers/todos')
+const adminController = require('../controllers/admin')
 
-router.get('/', todosController.getTodos)
+router.get('/', adminController.getTodos)
 
-router.post('/createTodo', todosController.createTodo)
+router.post('/createTodo', adminController.createTodo)
 
-router.put('/markComplete', todosController.markComplete)
+router.put('/markComplete', adminController.markComplete)
 
-router.put('/markIncomplete', todosController.markIncomplete)
+router.put('/markIncomplete', adminController.markIncomplete)
 
-router.delete('/deleteTodo', todosController.deleteTodo)
+router.delete('/deleteTodo', adminController.deleteTodo)
 
 module.exports = router
