@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>List of Events</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Todos</h1>
+    <h1>Events</h1>
     <ul>
     <% todos.forEach( el => { %>
         <li class='todoItem' data-id='<%=el._id%>'>
@@ -18,10 +18,11 @@
     <% }) %>    
     </ul>
 
-    <h2>Things left to do: <%= left %></h2>
+    <h3>Things left to do: <%= left %></h3>
 
+    <h2>Create New Event</h2>
     <form action="/todos/createTodo" method='POST'>
-        <input type="text" placeholder="Enter Todo Item" name='todoItem'>
+        <input type="text" placeholder="Enter Todo Item" name='todoItem' autofocus>
         <input type="submit">
     </form>
 
