@@ -36,7 +36,7 @@ const EventSchema = new mongoose.Schema({
   eventcountry: {
     type: String,
   },
-  completed: {
+  active: {
     type: Boolean,
     required: true,
   }

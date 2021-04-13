@@ -4,7 +4,7 @@ module.exports = {
     getTodos: async (req,res)=>{
         try{
             const todoItems = await Event.find()
-            const itemsLeft = await Event.countDocuments({completed: false})
+            const itemsLeft = await Event.countDocuments({active: false})
             res.render('todos.ejs', {todos: todoItems, left: itemsLeft})
         }catch(err){
             console.log(err)
@@ -22,7 +22,7 @@ module.exports = {
                 eventcity: req.body.eventcity,
                 eventstate: req.body.eventstate,
                 eventcountry: req.body.eventcountry,
-                completed: false
+                active: true
             })
             console.log('Todo has been added!')
             res.redirect('/admin')
@@ -33,10 +33,10 @@ module.exports = {
     markComplete: async (req, res)=>{
         try{
             await Event.findOneAndUpdate({_id:req.body.todoIdFromJSFile},{
-                completed: true
+                active: false
             })
-            console.log('Marked Complete')
-            res.json('Marked Complete')
+            console.log('Marked Active')
+            res.json('Marked Active')
         }catch(err){
             console.log(err)
         }
@@ -44,10 +44,10 @@ module.exports = {
     markIncomplete: async (req, res)=>{
         try{
             await Event.findOneAndUpdate({_id:req.body.todoIdFromJSFile},{
-                completed: false
+                active: true
             })
-            console.log('Marked Incomplete')
-            res.json('Marked Incomplete')
+            console.log('Marked Inactive')
+            res.json('Marked Inactive')
         }catch(err){
             console.log(err)
         }

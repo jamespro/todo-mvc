@@ -13,7 +13,7 @@
     <% todos.forEach( el => { %>
         <li class='todoItem' data-id='<%=el._id%>'>
 <br>            <span class='eventcode'><%= el.eventcode %></span>
-<br>            <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
+<br>            <span class='<%= el.active === false ? 'inactive' : 'not'%>'><%= el.todo %></span>
 <br>            <span class='eventstartdate'><%= el.eventstartdate %></span>
 <br>            <span class='eventenddate'>END: <%= el.eventenddate %></span>
 <br>            <span class='eventtype'>TYPE: <%= el.eventtype %></span>
