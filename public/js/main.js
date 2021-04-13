@@ -1,12 +1,12 @@
 const deleteBtn = document.querySelectorAll('.del')
-const todoItem = document.querySelectorAll('span.not')
+const eventname = document.querySelectorAll('span.not')
 const todoComplete = document.querySelectorAll('span.inactive')
 
 Array.from(deleteBtn).forEach((el)=>{
     el.addEventListener('click', deleteTodo)
 })
 
-Array.from(todoItem).forEach((el)=>{
+Array.from(eventname).forEach((el)=>{
     el.addEventListener('click', markComplete)
 })
 

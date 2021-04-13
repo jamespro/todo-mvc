@@ -10,10 +10,10 @@
 <body>
     <h1>Events</h1>
     <ul>
-    <% todos.forEach( el => { %>
+    <% events.forEach( el => { %>
         <li class='todoItem' data-id='<%=el._id%>'>
 <br>            <span class='eventcode'><%= el.eventcode %></span>
-<br>            <span class='<%= el.active === false ? 'inactive' : 'not'%>'><%= el.todo %></span>
+<br>            <span class='<%= el.active === false ? 'inactive' : 'not'%>'><%= el.eventname %></span>
 <br>            <span class='eventstartdate'><%= el.eventstartdate %></span>
 <br>            <span class='eventenddate'>END: <%= el.eventenddate %></span>
 <br>            <span class='eventtype'>TYPE: <%= el.eventtype %></span>
@@ -21,19 +21,20 @@
 <br>            <span class='eventcity'>CITY: <%= el.eventcity %></span>
 <br>            <span class='eventstate'><%= el.eventstartdate %></span>
 <br>            <span class='eventcountry'><%= el.eventcountry %></span>
+<br>            <span class='availablepostlive'><%= el.availablepostlive %></span>
 <br>            <span class='del'> Delete </span>
         </li>
     <% }) %>    
     </ul>
 
-    <h3>Things left to do: <%= left %></h3>
+    <h3>Active Events: <%= active %></h3>
 
     <h2>Create New Event</h2>
     <form action="/admin/createTodo" method='POST'>
 <div>
-    <label for="todoItem">
-        todoItem:
-        <input type="text" placeholder="Enter Todo Item" name='todoItem' value='VERYBIG Convention' autofocus>
+    <label for="eventname">
+        eventname:
+        <input type="text" placeholder="Enter Todo Item" name='eventname' value='VERYBIG Convention' autofocus>
     </label>
 </div>
 
@@ -90,6 +91,13 @@
     <label for="eventcountry">
         eventcountry:
         <input type="text" placeholder="eventcountry" name='eventcountry' value='United States'>
+    </label>
+</div>
+
+<div>
+    <label for="availablepostlive">
+        availablepostlive:
+        <input type="text" placeholder="availablepostlive" name='availablepostlive' value='true'>
     </label>
 </div>
 

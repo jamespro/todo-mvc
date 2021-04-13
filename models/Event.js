@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const EventSchema = new mongoose.Schema({
-  todo: {
+  eventname: {
     type: String,
     required: true,
   },
@@ -35,6 +35,9 @@ const EventSchema = new mongoose.Schema({
   },
   eventcountry: {
     type: String,
+  },
+  availablepostlive: {
+    type: Boolean,
   },
   active: {
     type: Boolean,

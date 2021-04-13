@@ -3,9 +3,9 @@ const Event = require('../models/Event')
 module.exports = {
     getTodos: async (req,res)=>{
         try{
-            const todoItems = await Event.find()
-            const itemsLeft = await Event.countDocuments({active: false})
-            res.render('todos.ejs', {todos: todoItems, left: itemsLeft})
+            const eventItems = await Event.find()
+            const activeEvents = await Event.countDocuments({active: false})
+            res.render('todos.ejs', {events: eventItems, active: activeEvents})
         }catch(err){
             console.log(err)
         }
@@ -14,7 +14,7 @@ module.exports = {
         try{
             await Event.create({
                 eventcode: req.body.eventcode,
-                todo: req.body.todoItem,
+                eventname: req.body.eventname,
                 eventstartdate: req.body.eventstartdate,
                 eventenddate: req.body.eventenddate,
                 eventtype: req.body.eventtype,
@@ -22,9 +22,10 @@ module.exports = {
                 eventcity: req.body.eventcity,
                 eventstate: req.body.eventstate,
                 eventcountry: req.body.eventcountry,
+                availablepostlive: req.body.availablepostlive,
                 active: true
             })
-            console.log('Todo has been added!')
+            console.log('Event has been added!')
             res.redirect('/admin')
         }catch(err){
             console.log(err)
