@@ -1,10 +1,13 @@
-h1{
-    color: red;
+body {
+  background-color: lightblue;
 }
-.completed{
-    text-decoration: line-through;
-    color: gray;
+h1 {
+  color: red;
 }
-.not{
-    text-decoration: underline;
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+.not {
+  text-decoration: underline;
 }

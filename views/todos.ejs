@@ -12,6 +12,7 @@
     <ul>
     <% todos.forEach( el => { %>
         <li class='todoItem' data-id='<%=el._id%>'>
+            <span class='eventcode'><%= el.eventcode %></span>
             <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
             <span class='del'> Delete </span>
         </li>
@@ -22,7 +23,70 @@
 
     <h2>Create New Event</h2>
     <form action="/admin/createTodo" method='POST'>
-        <input type="text" placeholder="Enter Todo Item" name='todoItem' autofocus>
+<div>
+    <label for="todoItem">
+        todoItem:
+        <input type="text" placeholder="Enter Todo Item" name='todoItem' value='VERYBIG Convention' autofocus>
+    </label>
+</div>
+
+<div>
+    <label for="eventcode">
+        eventcode:
+        <input type="text" placeholder="eventcode" name='eventcode' value='show0122'>
+    </label>
+</div>
+
+<div>
+    <label for="eventstartdate">
+        eventstartdate:
+        <input type="text" placeholder="eventstartdate" name='eventstartdate' value="2022-09-13T03:08:08.488+00:00">
+    </label>
+</div>
+
+<div>
+    <label for="eventenddate">
+        eventenddate:
+        <input type="text" placeholder="eventenddate" name='eventenddate' value="2022-09-23T23:59:59.488+00:00">
+    </label>
+</div>
+
+<div>
+    <label for="eventtype">
+        eventtype:
+        <input type="text" placeholder="eventtype" name='eventtype' value="onsite">
+    </label>
+</div>
+
+<div>
+    <label for="eventvenue">
+        eventvenue:
+        <input type="text" placeholder="eventvenue" name='eventvenue' value='Some Convention Center'>
+    </label>
+</div>
+
+<div>
+    <label for="eventcity">
+        eventcity:
+        <input type="text" placeholder="eventcity" name='eventcity' value='Las Default'>
+    </label>
+</div>
+
+<div>
+    <label for="eventstate">
+        eventstate:
+        <input type="text" placeholder="eventstate" name='eventstate' value='NV'>
+    </label>
+</div>
+
+<div>
+    <label for="eventcountry">
+        eventcountry:
+        <input type="text" placeholder="eventcountry" name='eventcountry' value='United States'>
+    </label>
+</div>
+
+
         <input type="submit">
     </form>
 

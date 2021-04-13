@@ -12,7 +12,18 @@ module.exports = {
     },
     createTodo: async (req, res)=>{
         try{
-            await Event.create({todo: req.body.todoItem, completed: false})
+            await Event.create({
+                eventcode: req.body.eventcode,
+                todo: req.body.todoItem,
+                eventstartdate: req.body.eventstartdate,
+                eventenddate: req.body.eventenddate,
+                eventtype: req.body.eventtype,
+                eventvenue: req.body.eventvenue,
+                eventcity: req.body.eventcity,
+                eventstate: req.body.eventstate,
+                eventcountry: req.body.eventcountry,
+                completed: false
+            })
             console.log('Todo has been added!')
             res.redirect('/admin')
         }catch(err){
