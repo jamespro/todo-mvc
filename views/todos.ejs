@@ -12,9 +12,16 @@
     <ul>
     <% todos.forEach( el => { %>
         <li class='todoItem' data-id='<%=el._id%>'>
-            <span class='eventcode'><%= el.eventcode %></span>
-            <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
-            <span class='del'> Delete </span>
+<br>            <span class='eventcode'><%= el.eventcode %></span>
+<br>            <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
+<br>            <span class='eventstartdate'><%= el.eventstartdate %></span>
+<br>            <span class='eventenddate'>END: <%= el.eventenddate %></span>
+<br>            <span class='eventtype'>TYPE: <%= el.eventtype %></span>
+<br>            <span class='eventvenue'>VENUE: <%= el.eventvenue %></span>
+<br>            <span class='eventcity'>CITY: <%= el.eventcity %></span>
+<br>            <span class='eventstate'><%= el.eventstartdate %></span>
+<br>            <span class='eventcountry'><%= el.eventcountry %></span>
+<br>            <span class='del'> Delete </span>
         </li>
     <% }) %>    
     </ul>
